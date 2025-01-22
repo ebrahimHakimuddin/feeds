@@ -1,6 +1,7 @@
 #!/bin/bash
 
-./tinyfeed -i inputs.txt -o index.html
+cd ~/feeds/
+./tinyfeed -i ./inputs.txt -o ./index.html
 
 if [[ $? -eq 0 ]]; then
     git add .

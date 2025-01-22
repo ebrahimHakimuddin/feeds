@@ -5,7 +5,7 @@ Wants=network-online.target
 
 [Service]
 User=kidfury
-ExecStart=/bin/sh ~/feeds/update_feeds.sh
+ExecStart=/bin/sh /home/kidfury/feeds/update_feeds.sh
 
 [Install]
 WantedBy=default.target
