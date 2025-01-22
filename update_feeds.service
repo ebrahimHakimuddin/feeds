@@ -1,0 +1,11 @@
+[Unit]
+Description=A Service For Updating My Rss Feeds Daily
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=kidfury
+ExecStart=/bin/sh ~/feeds/update_feeds.sh
+
+[Install]
+WantedBy=default.target
