@@ -1,3 +1,4 @@
+https://blog.dwac.dev/feed.xml
 https://eieio.games/feed.xml
 https://tkdodo.eu/blog/rss.xml
 https://thisweekinreact.com/newsletter/rss.xml
