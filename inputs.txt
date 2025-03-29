@@ -3,5 +3,4 @@ https://eieio.games/feed.xml
 https://tkdodo.eu/blog/rss.xml
 https://thisweekinreact.com/newsletter/rss.xml
 https://kettanaito.com/blog/rss.xml
-#https://www.todepond.com/feed/index.xml
 https://kibty.town/blog.rss
