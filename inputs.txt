@@ -5,3 +5,4 @@ https://thisweekinreact.com/newsletter/rss.xml
 https://kettanaito.com/blog/rss.xml
 https://kibty.town/blog.rss
 https://pkolaczk.github.io/feed.xml
+https://maxschmitt.me/feed.rss
