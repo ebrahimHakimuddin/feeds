@@ -8,3 +8,5 @@ https://pkolaczk.github.io/feed.xml
 https://maxschmitt.me/feed.rss
 https://planetscale.com/blog/feed.atom
 https://benjdd.com/rss.xml
+https://www.joshwcomeau.com/rss.xml
+https://ethanniser.dev/rss.xml?s=08
