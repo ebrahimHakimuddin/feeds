@@ -23,6 +23,7 @@
         'views/subcontractor_agreement_views.xml',
         'views/subcontractor_item_views.xml',
         'views/subcontractor_payment_views.xml',
+        'views/raw_material_consumption_views.xml',
         'wizard/weekly_payment_wizard_views.xml',
         'views/menu_items.xml',
     ],

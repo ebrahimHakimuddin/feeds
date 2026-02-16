@@ -32,4 +32,11 @@
               parent="menu_subcontractor_main"
               action="action_subcontractor_item"
               sequence="40"/>
+
+    <!-- Raw Material Consumption Menu -->
+    <menuitem id="menu_raw_material_consumption"
+              name="Material Consumption"
+              parent="menu_subcontractor_main"
+              action="action_raw_material_consumption"
+              sequence="50"/>
 </odoo>

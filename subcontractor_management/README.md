@@ -17,13 +17,19 @@ This Odoo module allows you to manage subcontractor agreements with contacts (pa
 - Set quantity to add to inventory when balance reaches zero
 - Support for product variants with different attributes
 
-### 3. Payment Tracking
+### 4. Raw Material Consumption
+- Track raw materials consumed for subcontractor work
+- Link consumption to specific agreements and partners
+- Automatic inventory deduction when marked as done
+- Calculate total cost of consumed materials
+
+### 5. Payment Tracking
 - Record payments against agreements
 - Track payment dates and amounts
 - Automatic balance calculation
 - Inventory update when agreement is fully paid
 
-### 4. Weekly Payment Wizard
+### 6. Weekly Payment Wizard
 - Select a subcontractor
 - View all unpaid agreements with balances
 - Create multiple payments at once
@@ -57,6 +63,15 @@ This Odoo module allows you to manage subcontractor agreements with contacts (pa
 4. Optionally set "Quantity to Add on Completion" for inventory updates
 5. The total price is calculated automatically
 
+### Recording Raw Material Consumption
+1. Go to Subcontractors > Material Consumption
+2. Click "Create"
+3. Select consumption date
+4. Optionally link to a subcontractor and agreement
+5. Add material lines with product, quantity, and unit cost
+6. Click "Confirm" to confirm the consumption
+7. Click "Mark as Done" to consume materials from inventory
+
 ### Recording Payments
 1. Go to Subcontractors > Payments
 2. Click "Create"
@@ -83,6 +98,8 @@ When an agreement's balance reaches zero and a payment is confirmed:
 - `subcontractor.agreement`: Main agreement model
 - `subcontractor.item`: Items/products in agreements
 - `subcontractor.payment`: Payment records
+- `raw.material.consumption`: Raw material consumption tracking
+- `raw.material.consumption.line`: Lines in material consumption
 - `weekly.payment.wizard`: Transient model for payment wizard
 - `weekly.payment.wizard.line`: Lines in payment wizard
 
