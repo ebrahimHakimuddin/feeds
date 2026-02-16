@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_subcontractor_main"
+              name="Subcontractors"
+              sequence="10"/>
+
+    <!-- Agreements Menu -->
+    <menuitem id="menu_subcontractor_agreements"
+              name="Agreements"
+              parent="menu_subcontractor_main"
+              action="action_subcontractor_agreement"
+              sequence="10"/>
+
+    <!-- Payments Menu -->
+    <menuitem id="menu_subcontractor_payments"
+              name="Payments"
+              parent="menu_subcontractor_main"
+              action="action_subcontractor_payment"
+              sequence="20"/>
+
+    <!-- Weekly Payment Wizard Menu -->
+    <menuitem id="menu_weekly_payment_wizard"
+              name="Weekly Payments"
+              parent="menu_subcontractor_main"
+              action="action_weekly_payment_wizard"
+              sequence="30"/>
+
+    <!-- Items Menu -->
+    <menuitem id="menu_subcontractor_items"
+              name="Items"
+              parent="menu_subcontractor_main"
+              action="action_subcontractor_item"
+              sequence="40"/>
+</odoo>

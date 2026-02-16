@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_subcontractor_agreement,access_subcontractor_agreement,model_subcontractor_agreement,base.group_user,1,1,1,1
+access_subcontractor_item,access_subcontractor_item,model_subcontractor_item,base.group_user,1,1,1,1
+access_subcontractor_payment,access_subcontractor_payment,model_subcontractor_payment,base.group_user,1,1,1,1
+access_weekly_payment_wizard,access_weekly_payment_wizard,model_weekly_payment_wizard,base.group_user,1,1,1,1
+access_weekly_payment_wizard_line,access_weekly_payment_wizard_line,model_weekly_payment_wizard_line,base.group_user,1,1,1,1
