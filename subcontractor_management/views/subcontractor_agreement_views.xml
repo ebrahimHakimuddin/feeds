@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Subcontractor Agreement Tree View -->
+    <!-- Subcontractor Agreement List View -->
     <record id="view_subcontractor_agreement_tree" model="ir.ui.view">
         <field name="name">subcontractor.agreement.tree</field>
         <field name="model">subcontractor.agreement</field>
         <field name="arch" type="xml">
-            <tree string="Subcontractor Agreements" decoration-success="state=='active'" decoration-muted="state in ['cancelled', 'completed']">
+            <list string="Subcontractor Agreements" decoration-success="state=='active'" decoration-muted="state in ['cancelled', 'completed']">
                 <field name="name"/>
                 <field name="partner_id"/>
                 <field name="date_start"/>
@@ -14,7 +14,7 @@
                 <field name="total_paid" sum="Total Paid"/>
                 <field name="balance" sum="Balance"/>
                 <field name="state"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -52,7 +52,7 @@
                     <notebook>
                         <page string="Items">
                             <field name="item_ids">
-                                <tree editable="bottom">
+                                <list editable="bottom">
                                     <field name="sequence" widget="handle"/>
                                     <field name="product_id" context="{'subcontractor_item_view': True, 'default_detailed_type': 'product'}"/>
                                     <field name="description"/>
@@ -61,17 +61,17 @@
                                     <field name="unit_price"/>
                                     <field name="total_price"/>
                                     <field name="quantity_to_add"/>
-                                </tree>
+                                </list>
                             </field>
                         </page>
                         <page string="Payments">
                             <field name="payment_ids">
-                                <tree>
+                                <list>
                                     <field name="name"/>
                                     <field name="payment_date"/>
                                     <field name="amount"/>
                                     <field name="state"/>
-                                </tree>
+                                </list>
                             </field>
                         </page>
                         <page string="Notes">
@@ -92,7 +92,7 @@
     <record id="action_subcontractor_agreement" model="ir.actions.act_window">
         <field name="name">Subcontractor Agreements</field>
         <field name="res_model">subcontractor.agreement</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create a new Subcontractor Agreement

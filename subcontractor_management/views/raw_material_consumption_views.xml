@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Raw Material Consumption Tree View -->
+    <!-- Raw Material Consumption List View -->
     <record id="view_raw_material_consumption_tree" model="ir.ui.view">
         <field name="name">raw.material.consumption.tree</field>
         <field name="model">raw.material.consumption</field>
         <field name="arch" type="xml">
-            <tree string="Raw Material Consumption" decoration-success="state=='done'" decoration-muted="state=='cancelled'">
+            <list string="Raw Material Consumption" decoration-success="state=='done'" decoration-muted="state=='cancelled'">
                 <field name="name"/>
                 <field name="consumption_date"/>
                 <field name="partner_id"/>
                 <field name="agreement_id"/>
                 <field name="total_cost" sum="Total Cost"/>
                 <field name="state"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -48,7 +48,7 @@
                     <notebook>
                         <page string="Materials">
                             <field name="line_ids">
-                                <tree editable="bottom">
+                                <list editable="bottom">
                                     <field name="sequence" widget="handle"/>
                                     <field name="product_id"/>
                                     <field name="description"/>
@@ -56,7 +56,7 @@
                                     <field name="uom_id"/>
                                     <field name="unit_cost"/>
                                     <field name="total_cost"/>
-                                </tree>
+                                </list>
                             </field>
                         </page>
                         <page string="Notes">
@@ -77,7 +77,7 @@
     <record id="action_raw_material_consumption" model="ir.actions.act_window">
         <field name="name">Raw Material Consumption</field>
         <field name="res_model">raw.material.consumption</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Record Raw Material Consumption

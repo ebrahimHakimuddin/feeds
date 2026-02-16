@@ -16,13 +16,13 @@
                 </group>
                 <separator string="Unpaid Agreements"/>
                 <field name="agreement_line_ids">
-                    <tree editable="bottom">
+                    <list editable="bottom">
                         <field name="agreement_id" readonly="1"/>
                         <field name="total_value" readonly="1" widget="monetary"/>
                         <field name="total_paid" readonly="1" widget="monetary"/>
                         <field name="balance" readonly="1" widget="monetary"/>
                         <field name="payment_amount" widget="monetary"/>
-                    </tree>
+                    </list>
                 </field>
                 <footer>
                     <button string="Create Payments" name="action_create_payments" type="object" class="oe_highlight"/>

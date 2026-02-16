@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Subcontractor Item Tree View -->
+    <!-- Subcontractor Item List View -->
     <record id="view_subcontractor_item_tree" model="ir.ui.view">
         <field name="name">subcontractor.item.tree</field>
         <field name="model">subcontractor.item</field>
         <field name="arch" type="xml">
-            <tree string="Subcontractor Items">
+            <list string="Subcontractor Items">
                 <field name="sequence" widget="handle"/>
                 <field name="agreement_id"/>
                 <field name="partner_id"/>
@@ -15,7 +15,7 @@
                 <field name="unit_price"/>
                 <field name="total_price"/>
                 <field name="quantity_to_add"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -53,6 +53,6 @@
     <record id="action_subcontractor_item" model="ir.actions.act_window">
         <field name="name">Subcontractor Items</field>
         <field name="res_model">subcontractor.item</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 </odoo>
