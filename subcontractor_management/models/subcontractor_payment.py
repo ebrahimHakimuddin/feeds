@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 
 
@@ -57,7 +57,7 @@ class SubcontractorPayment(models.Model):
         # Create stock move to increase inventory
         stock_location = self.env.ref('stock.stock_location_stock')
         move_vals = {
-            'name': f'Subcontractor Completion: {item.product_id.name}',
+            'name': _('Subcontractor Completion: %s') % item.product_id.name,
             'product_id': item.product_id.id,
             'product_uom': item.uom_id.id,
             'product_uom_qty': item.quantity_to_add,

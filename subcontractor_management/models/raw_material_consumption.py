@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 
 
@@ -98,7 +98,7 @@ class RawMaterialConsumptionLine(models.Model):
             production_location = self.env.ref('stock.stock_location_scrapped')
         
         move_vals = {
-            'name': f'Material Consumption: {self.product_id.name}',
+            'name': _('Material Consumption: %s') % self.product_id.name,
             'product_id': self.product_id.id,
             'product_uom': self.uom_id.id,
             'product_uom_qty': self.quantity,

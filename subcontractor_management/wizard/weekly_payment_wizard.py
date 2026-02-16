@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 
 
 class WeeklyPaymentWizard(models.TransientModel):
@@ -45,7 +45,7 @@ class WeeklyPaymentWizard(models.TransientModel):
                     'payment_date': self.payment_date,
                     'amount': line.payment_amount,
                     'state': 'draft',
-                    'notes': f'Weekly payment via wizard on {self.payment_date}'
+                    'notes': _('Weekly payment via wizard on %s') % self.payment_date
                 })
         
         return {'type': 'ir.actions.act_window_close'}

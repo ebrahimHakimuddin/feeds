@@ -43,10 +43,10 @@ class SubcontractorAgreement(models.Model):
         for record in self:
             record.total_value = sum(record.item_ids.mapped('total_price'))
 
-    @api.depends('payment_ids.amount')
+    @api.depends('payment_ids.amount', 'payment_ids.state')
     def _compute_total_paid(self):
         for record in self:
-            record.total_paid = sum(record.payment_ids.mapped('amount'))
+            record.total_paid = sum(record.payment_ids.filtered(lambda p: p.state == 'confirmed').mapped('amount'))
 
     @api.depends('total_value', 'total_paid')
     def _compute_balance(self):
