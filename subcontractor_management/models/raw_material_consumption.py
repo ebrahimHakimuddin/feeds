@@ -107,7 +107,7 @@ class RawMaterialConsumptionLine(models.Model):
             'product_uom_qty': self.quantity,
             'location_id': stock_location.id,
             'location_dest_id': production_location.id,
-            'origin': f'{self.consumption_id.name}',
+            'origin': self.consumption_id.name,
         }
         
         move = self.env['stock.move'].create(move_vals)

@@ -63,7 +63,7 @@ class SubcontractorPayment(models.Model):
             'product_uom_qty': item.quantity_to_add,
             'location_id': self.env.ref('stock.stock_location_suppliers').id,
             'location_dest_id': stock_location.id,
-            'origin': f'{item.agreement_id.name}',
+            'origin': item.agreement_id.name,
         }
         
         move = self.env['stock.move'].create(move_vals)
