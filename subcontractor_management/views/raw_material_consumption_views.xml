@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Raw Material Consumption List View -->
+    <record id="view_raw_material_consumption_tree" model="ir.ui.view">
+        <field name="name">raw.material.consumption.tree</field>
+        <field name="model">raw.material.consumption</field>
+        <field name="arch" type="xml">
+            <list string="Raw Material Consumption" decoration-success="state=='done'" decoration-muted="state=='cancelled'">
+                <field name="name"/>
+                <field name="consumption_date"/>
+                <field name="partner_id"/>
+                <field name="agreement_id"/>
+                <field name="total_cost" sum="Total Cost"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Raw Material Consumption Form View -->
+    <record id="view_raw_material_consumption_form" model="ir.ui.view">
+        <field name="name">raw.material.consumption.form</field>
+        <field name="model">raw.material.consumption</field>
+        <field name="arch" type="xml">
+            <form string="Raw Material Consumption">
+                <header>
+                    <button name="action_confirm" string="Confirm" type="object" invisible="state != 'draft'" class="oe_highlight"/>
+                    <button name="action_done" string="Mark as Done" type="object" invisible="state != 'confirmed'" class="oe_highlight"/>
+                    <button name="action_cancel" string="Cancel" type="object" invisible="state not in ('draft', 'confirmed')"/>
+                    <button name="action_reset_to_draft" string="Reset to Draft" type="object" invisible="state != 'cancelled'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="consumption_date"/>
+                            <field name="partner_id"/>
+                        </group>
+                        <group>
+                            <field name="agreement_id" domain="[('partner_id', '=', partner_id)]" options="{'no_create': True}"/>
+                            <field name="total_cost" widget="monetary"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Materials">
+                            <field name="line_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="product_id"/>
+                                    <field name="description"/>
+                                    <field name="quantity"/>
+                                    <field name="uom_id"/>
+                                    <field name="unit_cost"/>
+                                    <field name="total_cost"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Notes">
+                            <field name="notes"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Raw Material Consumption Action -->
+    <record id="action_raw_material_consumption" model="ir.actions.act_window">
+        <field name="name">Raw Material Consumption</field>
+        <field name="res_model">raw.material.consumption</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Record Raw Material Consumption
+            </p>
+            <p>
+                Track raw materials consumed for subcontractor work.
+            </p>
+        </field>
+    </record>
+</odoo>

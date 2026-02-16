@@ -1,3 +1,10 @@
 .histfile
 tinyfeed
 update.log
+__pycache__/
+*.pyc
+*.pyo
+*.swp
+*.swo
+*~
+.DS_Store

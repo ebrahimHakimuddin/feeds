@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Subcontractor Item List View -->
+    <record id="view_subcontractor_item_tree" model="ir.ui.view">
+        <field name="name">subcontractor.item.tree</field>
+        <field name="model">subcontractor.item</field>
+        <field name="arch" type="xml">
+            <list string="Subcontractor Items">
+                <field name="sequence" widget="handle"/>
+                <field name="agreement_id"/>
+                <field name="partner_id"/>
+                <field name="product_id"/>
+                <field name="quantity"/>
+                <field name="uom_id"/>
+                <field name="unit_price"/>
+                <field name="total_price"/>
+                <field name="quantity_to_add"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Subcontractor Item Form View -->
+    <record id="view_subcontractor_item_form" model="ir.ui.view">
+        <field name="name">subcontractor.item.form</field>
+        <field name="model">subcontractor.item</field>
+        <field name="arch" type="xml">
+            <form string="Subcontractor Item">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="agreement_id"/>
+                            <field name="partner_id"/>
+                            <field name="product_id" options="{'no_create': True}" context="{'subcontractor_item_view': True}"/>
+                            <field name="product_tmpl_id" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="quantity"/>
+                            <field name="uom_id"/>
+                            <field name="unit_price"/>
+                            <field name="total_price"/>
+                            <field name="quantity_to_add"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Subcontractor Item Action -->
+    <record id="action_subcontractor_item" model="ir.actions.act_window">
+        <field name="name">Subcontractor Items</field>
+        <field name="res_model">subcontractor.item</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>
