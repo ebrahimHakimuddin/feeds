@@ -174,8 +174,9 @@ Potential improvements for future versions:
 - Odoo 15.0+
 - Odoo 16.0+
 - Odoo 17.0+
+- Odoo 19.0+
 
-Note: Some features may require adjustments for specific Odoo versions.
+Note: Views have been updated to use `list` instead of `tree` for Odoo 19 compatibility.
 
 ### License
 

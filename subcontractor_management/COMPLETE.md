@@ -264,7 +264,7 @@ The module provides:
 
 ---
 
-**Module Version**: 1.0
-**Odoo Compatibility**: 14.0+, 15.0+, 16.0+, 17.0+
+**Version**: 1.0
+**Odoo Compatibility**: 14.0+, 15.0+, 16.0+, 17.0+, 19.0+
 **Dependencies**: base, product, stock
 **License**: As-is for use with Odoo

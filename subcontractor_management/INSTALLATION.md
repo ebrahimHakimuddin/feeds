@@ -3,7 +3,7 @@
 ## Installation Steps
 
 ### Prerequisites
-- Odoo 14, 15, 16, or 17 installed
+- Odoo 14, 15, 16, 17, or 19 installed
 - Access to Odoo addons directory
 - Base, Product, and Stock modules installed
 
