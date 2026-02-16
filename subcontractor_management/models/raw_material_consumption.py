@@ -91,10 +91,13 @@ class RawMaterialConsumptionLine(models.Model):
             return
         
         stock_location = self.env.ref('stock.stock_location_stock')
-        # Using production location as destination for consumed materials
-        production_location = self.env.ref('stock.location_production', raise_if_not_found=False)
+        
+        # Try to find production location, fallback to scrapped if not found
+        production_location = self.env['stock.location'].search([
+            ('usage', '=', 'production')
+        ], limit=1)
+        
         if not production_location:
-            # Fallback to inventory loss if production location doesn't exist
             production_location = self.env.ref('stock.stock_location_scrapped')
         
         move_vals = {
