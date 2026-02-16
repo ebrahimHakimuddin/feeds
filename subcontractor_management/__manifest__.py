@@ -27,6 +27,9 @@
         'wizard/weekly_payment_wizard_views.xml',
         'views/menu_items.xml',
     ],
+    'demo': [
+        'data/demo_data.xml',
+    ],
     'installable': True,
     'application': True,
     'auto_install': False,
