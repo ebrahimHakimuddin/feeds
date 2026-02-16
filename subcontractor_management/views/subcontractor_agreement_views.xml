@@ -27,7 +27,7 @@
                 <header>
                     <button name="action_activate" string="Activate" type="object" invisible="state != 'draft'" class="oe_highlight"/>
                     <button name="action_complete" string="Complete" type="object" invisible="state != 'active'" class="oe_highlight"/>
-                    <button name="action_cancel" string="Cancel" type="object" invisible="state not in ['draft', 'active']"/>
+                    <button name="action_cancel" string="Cancel" type="object" invisible="state not in ('draft', 'active')"/>
                     <button name="action_reset_to_draft" string="Reset to Draft" type="object" invisible="state != 'cancelled'"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,active,completed"/>
                 </header>
